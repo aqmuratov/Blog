@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Hello</h1>
+    {% for post in posts %}
+        <ul>
+            <li>
+                <h1>{{post.title}}</h1>
+            </li>
+            <a href="{% url 'post_detail' post.pk %}">
+                <img style="width: 500px; border-radius: 10px;"
+                src="{{ post.image.url }}" alt="{{post.title}}">
+            </a>
+        </ul>
+    {% endfor %}
+
+{% endblock %}
